@@ -1,10 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.jar.JarEntry;
 
 public class GUI extends JFrame {
 
     private Dice dice1 = new Dice(), dice2 = new Dice();
+
+
 
     public GUI() {
         super("Dice");
@@ -20,9 +21,15 @@ public class GUI extends JFrame {
         bRoll.setForeground(Color.WHITE);
         add(bRoll);
 
-        JLabel label = new JLabel("DU KEK WÜRFEL JETZT");
+        ImageIcon diceOne = new ImageIcon("resources/dice1.png\n");
+        ImageIcon diceTwo = new ImageIcon("resources/dice1.png\n");
+
+        JLabel label = new JLabel("ROLL THE DICE NOW");
         label.setBounds(70,100,300,100);
         add(label);
+
+        add(new JLabel(diceOne)).setBounds(50,50,100,100);
+        add(new JLabel(diceTwo)).setBounds(150,50,100,100);
 
 
         bRoll.addActionListener(e -> {
@@ -35,10 +42,10 @@ public class GUI extends JFrame {
         });
 
 
-
-
-
         setVisible(true);
     }
+
+
+
 
 }
